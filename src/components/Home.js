@@ -23,7 +23,7 @@ class Home extends React.Component {
     const {user} = this.props.auth0
     const email = user.email
     axios
-    .get(`http://localhost:3800/fruits?email=${email}`)
+    .get(`https://final-exam301.herokuapp.com/fruits?email=${email}`)
     .then(result=>{
       this.setState({
         fruitsArr:result.data

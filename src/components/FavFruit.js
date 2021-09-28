@@ -23,7 +23,7 @@ class FavFruit extends React.Component {
     const email = user.email
     if (isAuthenticated) {
       axios
-        .get(`http://localhost:3800/getFruits?email=${email}`)
+        .get(`https://final-exam301.herokuapp.com/getFruits?email=${email}`)
         .then(result => {
           this.setState({
             fruitsArr: result.data
@@ -47,7 +47,7 @@ class FavFruit extends React.Component {
       email: email
     }
     axios
-      .put(`http://localhost:3800/updateFruit/${this.state.fruitId}`, object)
+      .put(`https://final-exam301.herokuapp.com/updateFruit/${this.state.fruitId}`, object)
       .then(result => {
         this.setState({
           fruitsArr: result.data
@@ -63,7 +63,7 @@ class FavFruit extends React.Component {
     const { user } = this.props.auth0
     const email = user.email
     axios
-      .delete(`http://localhost:3800/deleteFruit/${id}?email=${email}`)
+      .delete(`https://final-exam301.herokuapp.com/deleteFruit/${id}?email=${email}`)
       .then(result => {
         this.setState({
           fruitsArr: result.data
